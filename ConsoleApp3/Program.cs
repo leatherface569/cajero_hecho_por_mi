@@ -8,7 +8,7 @@ namespace cajero_hecho_por_mi
 {
     public enum Menu
     {
-        Consultar = 1, Deposito, Retiro, HistorialDepositos, HistorialRetiros, salir
+        Consultar = 1, Deposito, Retiro, HistorialDepositos, HistorialRetiros, salir, DepositosoRetiros
     }
     class Program
     {
@@ -36,6 +36,8 @@ namespace cajero_hecho_por_mi
                                 break;
                             case Menu.Retiro:
                                 Retirar();
+                                break;
+                            case Menu.DepositosoRetiros:
                                 break;
                             case Menu.HistorialDepositos:
                                 Console.WriteLine("Historial de depósitos");
@@ -122,6 +124,36 @@ namespace cajero_hecho_por_mi
             }
         }
 
+        static void DepositosoRetiros()
+        {
+            if (historialDepositos.Count > 0)
+        }
+        Console.WriteLine($"Cantidad de depósitos: {historialDepositos.Count}");
+        double totalDepositos = 0;
+        foreach (var d in historialDepositos.Values)
+        {
+        totalDepositos += d;
+        }
+        Console.WriteLine($"Total depositado: ${totalDepositos}");
+        {
+        else
+        }
+         Console.WriteLine("No se han realizado depósitos.");
+        {
+        if (historialRetiros.Count > 0)
+        {
+         Console.WriteLine($"Cantidad de retiros: {historialRetiros.Count}");
+         double totalRetiros = 0;
+         foreach (var r in historialRetiros.Values)
+        }
+        totalRetiros += r;
+        
+         Console.WriteLine($"Total retirado: ${totalRetiros}");
+        {
+        else
+        {
+         Console.WriteLine("No se han realizado retiros.");
+        }
 
 
 
@@ -158,6 +190,7 @@ namespace cajero_hecho_por_mi
             Console.WriteLine("4 Revisar historial de depositos");
             Console.WriteLine("5 Revisar historial de retiros");
             Console.WriteLine("6 Salir");
+            Console.WriteLine("7 Depositos o Retiros");
             Console.Write("Selecciona una opción:");
 
             if (int.TryParse(Console.ReadLine(), out int opcion) && Enum.IsDefined(typeof(Menu), opcion))
@@ -177,7 +210,7 @@ namespace cajero_hecho_por_mi
             string servidorSmtp = "smtp.office365.com";//OFFICE CORREO
             int puerto = 587;//PUERTO
             string usuario = "113340@alumnouninter.mx";  // Tu correo de Office 365
-            string contrasena = "poner password real";  // Tu contraseña de Office 365
+            string contrasena = "Paladins1234";  // Tu contraseña de Office 365
 
             // Crear el cliente SMTP
             SmtpClient smtp = new SmtpClient(servidorSmtp)
